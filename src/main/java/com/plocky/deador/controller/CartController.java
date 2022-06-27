@@ -1,7 +1,6 @@
 package com.plocky.deador.controller;
 
 import com.plocky.deador.dto.OrderDTO;
-import com.plocky.deador.repository.global.GlobalData;
 import com.plocky.deador.entity.Order;
 import com.plocky.deador.entity.OrderItem;
 import com.plocky.deador.entity.Product;
@@ -9,7 +8,10 @@ import com.plocky.deador.entity.User;
 import com.plocky.deador.repository.OrderItemRepository;
 import com.plocky.deador.repository.OrderRepository;
 import com.plocky.deador.repository.UserRepository;
+import com.plocky.deador.repository.global.GlobalData;
 import com.plocky.deador.service.ProductService;
+import org.modelmapper.ModelMapper;
+import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
@@ -68,18 +70,14 @@ public class CartController {
     @PostMapping("/checkout")
     public String orderPost(@ModelAttribute("orderDTO") OrderDTO orderDTO,
                             @AuthenticationPrincipal User authenticationUser) {
-        Order order = new Order();
-        order.setId(orderDTO.getId());
-        order.setFirstName(orderDTO.getFirstName());
-        order.setLastName(orderDTO.getLastName());
-        order.setPhoneNumber(orderDTO.getPhoneNumber());
-        order.setTownCity(orderDTO.getTownCity());
-        order.setAddress(orderDTO.getAddress());
-        order.setPostcode(orderDTO.getPostcode());
-        order.setEmail(authenticationUser.getEmail());
-        order.setAdditionalInformation(orderDTO.getAdditionalInformation());
+        ModelMapper modelMapper = new ModelMapper();
+        modelMapper.getConfiguration()
+                .setMatchingStrategy(MatchingStrategies.LOOSE);
+        Order order = modelMapper
+                .map(orderDTO, Order.class);
         order.setDeliveryStatus("Preparation");
         order.setTotalAmount((int) GlobalData.cart.stream().mapToDouble(Product::getPrice).sum());
+        order.setEmail(authenticationUser.getEmail());
         order.setUser(authenticationUser);
         // --- ORDER SAVE ---
         orderRepository.save(order);

@@ -9,6 +9,8 @@ import com.plocky.deador.service.CategoryService;
 import com.plocky.deador.service.OrderItemService;
 import com.plocky.deador.service.OrderService;
 import com.plocky.deador.service.ProductService;
+import org.modelmapper.ModelMapper;
+import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -105,38 +107,11 @@ public class AdminController {
     public String productAddPost(@ModelAttribute("productDTO") ProductDTO productDTO,
                                  @RequestParam("productImage") MultipartFile file,
                                  @RequestParam("imgName") String imgName) throws IOException {
-        Product product = new Product();
-        product.setId(productDTO.getId());
-        product.setName(productDTO.getName());
-        product.setCategory(categoryService.getCategoryById(productDTO.getCategoryId()).get());
-        product.setPrice(productDTO.getPrice());
-        product.setBrand(productDTO.getBrand());
-        product.setModel(productDTO.getModel());
-        product.setOperatingSystem(productDTO.getOperatingSystem());
-        product.setScreenSize(productDTO.getScreenSize());
-        product.setDisplayResolution(productDTO.getDisplayResolution());
-        product.setMatrixType(productDTO.getMatrixType());
-        product.setProcessor(productDTO.getProcessor());
-        product.setNumberOfCores(productDTO.getNumberOfCores());
-        product.setBattery(productDTO.getBattery());
-        product.setRam(productDTO.getRam());
-        product.setStorageCapacity(productDTO.getStorageCapacity());
-        product.setNumberOfMainCameras(productDTO.getNumberOfMainCameras());
-        product.setMainCameraResolution(productDTO.getMainCameraResolution());
-        product.setNumberOfFrontCameras(productDTO.getNumberOfFrontCameras());
-        product.setFrontCameraResolution(productDTO.getFrontCameraResolution());
-        product.setNumberOfSimCards(productDTO.getNumberOfSimCards());
-        product.setConnectivity(productDTO.getConnectivity());
-        product.setBluetooth(productDTO.getBluetooth());
-        product.setNfc(productDTO.getNfc());
-        product.setWeight(productDTO.getWeight());
-        product.setDescription(productDTO.getDescription());
-
-        product.setAction(productDTO.getAction());
-        product.setPriceBeforeAction(productDTO.getPriceBeforeAction());
-        product.setPriceAfterAction(productDTO.getPriceAfterAction());
-        product.setCountOfViews(productDTO.getCountOfViews());
-
+        ModelMapper modelMapper = new ModelMapper();
+        modelMapper.getConfiguration()
+                .setMatchingStrategy(MatchingStrategies.LOOSE);
+        Product product = modelMapper
+                .map(productDTO, Product.class);
         String imageUUID;
         if (!file.isEmpty()) {
             imageUUID = file.getOriginalFilename();
@@ -162,42 +137,11 @@ public class AdminController {
     @GetMapping("/admin/product/update/{id}")
     public String updateProductGet(@PathVariable long id, Model model) {
         Product product = productService.getProductById(id).get();
-        ProductDTO productDTO = new ProductDTO();
-        productDTO.setId(product.getId());
-        productDTO.setName(product.getName());
-        productDTO.setCategoryId((product.getCategory().getId()));
-        productDTO.setPrice(product.getPrice());
-        productDTO.setBrand(product.getBrand());
-        productDTO.setModel(product.getModel());
-        productDTO.setOperatingSystem(product.getOperatingSystem());
-        productDTO.setScreenSize(product.getScreenSize());
-        productDTO.setDisplayResolution(product.getDisplayResolution());
-        productDTO.setMatrixType(product.getMatrixType());
-        productDTO.setProcessor(product.getProcessor());
-        productDTO.setNumberOfCores(product.getNumberOfCores());
-        productDTO.setBattery(product.getBattery());
-        productDTO.setRam(product.getRam());
-        productDTO.setStorageCapacity(product.getStorageCapacity());
-        productDTO.setNumberOfMainCameras(product.getNumberOfMainCameras());
-        productDTO.setMainCameraResolution(product.getMainCameraResolution());
-        productDTO.setNumberOfFrontCameras(product.getNumberOfFrontCameras());
-        productDTO.setFrontCameraResolution(product.getFrontCameraResolution());
-        productDTO.setNumberOfSimCards(product.getNumberOfSimCards());
-        productDTO.setConnectivity(product.getConnectivity());
-        productDTO.setBluetooth(product.getBluetooth());
-        productDTO.setNfc(product.getNfc());
-        productDTO.setWeight(product.getWeight());
-        productDTO.setDescription(product.getDescription());
-
-        productDTO.setAction(product.getAction());
-        productDTO.setPriceBeforeAction(product.getPriceBeforeAction());
-        productDTO.setPriceAfterAction(product.getPriceAfterAction());
-        productDTO.setCountOfViews(product.getCountOfViews());
-
-
-        productDTO.setImageName(product.getImageName());
-
-
+        ModelMapper modelMapper = new ModelMapper();
+        modelMapper.getConfiguration()
+                .setMatchingStrategy(MatchingStrategies.LOOSE);
+        ProductDTO productDTO = modelMapper
+                .map(product, ProductDTO.class);
         model.addAttribute("categories", categoryService.getAllCategory());
         model.addAttribute("productDTO", productDTO);
         return "/productsAdd";
