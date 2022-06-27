@@ -1,2 +1,1 @@
-# Ecommerce
-E-commerce web-application
+E-commerce web-application MVC
