@@ -15,6 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
@@ -46,7 +47,8 @@ public class CabinetController {
                 listOrderItemUser.add(orderItem);
             }
         }
-
+        Collections.reverse(listOrderItemUser);
+        Collections.reverse(listOrders);
         model.addAttribute("listOrderItems", listOrderItemUser);
         model.addAttribute("user", user);
         model.addAttribute("listOrders", listOrders);
