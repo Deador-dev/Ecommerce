@@ -1,9 +1,9 @@
 package com.plocky.deador.controller;
 
 import com.plocky.deador.dto.ProductDTO;
-import com.plocky.deador.model.Category;
-import com.plocky.deador.model.Order;
-import com.plocky.deador.model.Product;
+import com.plocky.deador.entity.Category;
+import com.plocky.deador.entity.Order;
+import com.plocky.deador.entity.Product;
 import com.plocky.deador.repository.OrderRepository;
 import com.plocky.deador.service.CategoryService;
 import com.plocky.deador.service.OrderItemService;

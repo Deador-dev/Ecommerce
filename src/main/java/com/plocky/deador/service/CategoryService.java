@@ -1,8 +1,7 @@
 package com.plocky.deador.service;
 
-import com.plocky.deador.model.Category;
+import com.plocky.deador.entity.Category;
 import com.plocky.deador.repository.CategoryRepository;
-import com.plocky.deador.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

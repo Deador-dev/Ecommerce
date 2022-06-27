@@ -1,9 +1,9 @@
 package com.plocky.deador.controller;
 
 import com.plocky.deador.repository.global.GlobalData;
-import com.plocky.deador.model.PageUrlPrefix;
-import com.plocky.deador.model.Role;
-import com.plocky.deador.model.User;
+import com.plocky.deador.repository.global.PageUrlPrefix;
+import com.plocky.deador.entity.Role;
+import com.plocky.deador.entity.User;
 import com.plocky.deador.repository.RoleRepository;
 import com.plocky.deador.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;

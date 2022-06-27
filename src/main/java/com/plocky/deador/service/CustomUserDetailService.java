@@ -1,7 +1,7 @@
 package com.plocky.deador.service;
 
-import com.plocky.deador.model.CustomUserDetail;
-import com.plocky.deador.model.User;
+import com.plocky.deador.repository.global.CustomUserDetail;
+import com.plocky.deador.entity.User;
 import com.plocky.deador.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;

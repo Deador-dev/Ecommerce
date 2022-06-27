@@ -1,6 +1,6 @@
 package com.plocky.deador.service;
 
-import com.plocky.deador.model.OrderItem;
+import com.plocky.deador.entity.OrderItem;
 import com.plocky.deador.repository.OrderItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
