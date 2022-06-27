@@ -1,6 +1,6 @@
 package com.plocky.deador.dto;
 
-import com.plocky.deador.model.User;
+import com.plocky.deador.entity.User;
 import lombok.Data;
 
 import javax.persistence.GeneratedValue;

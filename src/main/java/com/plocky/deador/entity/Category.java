@@ -1,4 +1,4 @@
-package com.plocky.deador.model;
+package com.plocky.deador.entity;
 
 
 import lombok.Data;

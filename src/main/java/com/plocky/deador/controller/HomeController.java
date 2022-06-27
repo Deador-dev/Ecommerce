@@ -2,8 +2,8 @@ package com.plocky.deador.controller;
 
 
 import com.plocky.deador.repository.global.GlobalData;
-import com.plocky.deador.model.PageUrlPrefix;
-import com.plocky.deador.model.Product;
+import com.plocky.deador.repository.global.PageUrlPrefix;
+import com.plocky.deador.entity.Product;
 import com.plocky.deador.repository.ProductRepository;
 import com.plocky.deador.service.CategoryService;
 import com.plocky.deador.service.ProductService;

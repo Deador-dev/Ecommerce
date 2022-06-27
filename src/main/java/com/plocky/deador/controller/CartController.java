@@ -2,10 +2,10 @@ package com.plocky.deador.controller;
 
 import com.plocky.deador.dto.OrderDTO;
 import com.plocky.deador.repository.global.GlobalData;
-import com.plocky.deador.model.Order;
-import com.plocky.deador.model.OrderItem;
-import com.plocky.deador.model.Product;
-import com.plocky.deador.model.User;
+import com.plocky.deador.entity.Order;
+import com.plocky.deador.entity.OrderItem;
+import com.plocky.deador.entity.Product;
+import com.plocky.deador.entity.User;
 import com.plocky.deador.repository.OrderItemRepository;
 import com.plocky.deador.repository.OrderRepository;
 import com.plocky.deador.repository.UserRepository;

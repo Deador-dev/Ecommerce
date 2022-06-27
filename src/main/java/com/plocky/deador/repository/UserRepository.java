@@ -1,6 +1,6 @@
 package com.plocky.deador.repository;
 
-import com.plocky.deador.model.User;
+import com.plocky.deador.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

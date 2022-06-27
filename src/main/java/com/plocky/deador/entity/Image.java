@@ -1,9 +1,8 @@
-package com.plocky.deador.model;
+package com.plocky.deador.entity;
 
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Data
 @Entity

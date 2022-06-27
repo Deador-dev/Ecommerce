@@ -1,5 +1,6 @@
-package com.plocky.deador.model;
+package com.plocky.deador.repository.global;
 
+import com.plocky.deador.entity.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

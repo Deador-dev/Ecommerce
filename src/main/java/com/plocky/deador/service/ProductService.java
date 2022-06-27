@@ -1,6 +1,6 @@
 package com.plocky.deador.service;
 
-import com.plocky.deador.model.Product;
+import com.plocky.deador.entity.Product;
 import com.plocky.deador.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

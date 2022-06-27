@@ -1,6 +1,6 @@
 package com.plocky.deador.service;
 
-import com.plocky.deador.model.Order;
+import com.plocky.deador.entity.Order;
 import com.plocky.deador.repository.OrderItemRepository;
 import com.plocky.deador.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;

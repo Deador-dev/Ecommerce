@@ -1,9 +1,9 @@
 package com.plocky.deador.controller;
 
 import com.plocky.deador.repository.global.GlobalData;
-import com.plocky.deador.model.Order;
-import com.plocky.deador.model.OrderItem;
-import com.plocky.deador.model.User;
+import com.plocky.deador.entity.Order;
+import com.plocky.deador.entity.OrderItem;
+import com.plocky.deador.entity.User;
 import com.plocky.deador.service.CategoryService;
 import com.plocky.deador.service.CustomUserDetailService;
 import com.plocky.deador.service.OrderItemService;

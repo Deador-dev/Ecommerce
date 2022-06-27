@@ -1,6 +1,6 @@
 package com.plocky.deador.repository.global;
 
-import com.plocky.deador.model.Product;
+import com.plocky.deador.entity.Product;
 
 import java.util.ArrayList;
 import java.util.List;

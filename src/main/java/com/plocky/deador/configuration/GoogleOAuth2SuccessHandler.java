@@ -1,7 +1,7 @@
 package com.plocky.deador.configuration;
 
-import com.plocky.deador.model.Role;
-import com.plocky.deador.model.User;
+import com.plocky.deador.entity.Role;
+import com.plocky.deador.entity.User;
 import com.plocky.deador.repository.RoleRepository;
 import com.plocky.deador.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +12,6 @@ import org.springframework.security.web.RedirectStrategy;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
 
-import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

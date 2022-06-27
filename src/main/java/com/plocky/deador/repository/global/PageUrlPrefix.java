@@ -1,4 +1,4 @@
-package com.plocky.deador.model;
+package com.plocky.deador.repository.global;
 
 public class PageUrlPrefix {
     private String pageUrlPrefixString;

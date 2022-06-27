@@ -1,6 +1,6 @@
 package com.plocky.deador.repository;
 
-import com.plocky.deador.model.Order;
+import com.plocky.deador.entity.Order;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
